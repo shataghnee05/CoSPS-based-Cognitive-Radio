@@ -1,6 +1,9 @@
 clc;
 clear all;
 close all;
+
+addpath(genpath('src'));
+
 % ==== Input Parameters ==== %
 N = 4096;         % Number of samples
 fs = 1e6;         % Sampling Frequency
@@ -16,12 +19,12 @@ cap = 6;          %Guard Band(kHz);
 SU_data = cell(1,SU_count);
 for i = 1:SU_count
     [coset,true_freq] = preprocessing(N,fs,PS);
-    SU_data{i} = cosps(coset,r,PS,i);
+    SU_data{i} = cosps_main_algorithm(coset,r,PS,i);
     SU_data{i}.true_freq = true_freq;
 end
 % ==== Network Coordinator Side(NC) ==== %
 k_sel = 4;
-[detected_freq,NC_table] = nc_fusion(SU_data,k_sel,fs);
+[detected_freq,NC_table] = nc_fusion_center(SU_data,k_sel,fs);
 disp(detected_freq/1e3);
 % ==== Free Band Detection ==== %
 freq_space = 1e3;
@@ -42,4 +45,3 @@ else
     disp(array2table(allocation_table, ...
         'VariableNames', {'SU_ID','Start_kHz','End_kHz','Allocated_kHz'}));
 end
-
