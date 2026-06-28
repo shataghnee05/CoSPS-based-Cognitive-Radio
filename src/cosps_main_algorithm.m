@@ -45,6 +45,5 @@ for i = 1:PS
     spec_avg = spec_avg + abs(X(1:fft_len));
 end
 spec_avg = spec_avg/PS;
-threshold = 0.5*max(spec_avg);
-active_bins = find(spec_avg>threshold);
+[active_bins, threshold] = os_cfar_detection(spec_avg);
 end
