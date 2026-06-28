@@ -106,12 +106,7 @@ for experimenting with alternative sensing and allocation strategies.
 
 ---
 
-## ⚡ Installation & Setup
-
-```bash
-git clone https://github.com/<username>/CoSPS-Based-Cognitive-Radio.git
-cd CoSPS-Based-Cognitive-Radio
-```
+##  Installation & Setup
 
 In MATLAB:
 
@@ -170,24 +165,6 @@ CoSPS-Based-Cognitive-Radio/
 
 ---
 
-## 📈 Experimental Results
-
-<p align="center">
-  <img src="results/Pd_vs_SNR.png" width="700"><br>
-  <em>Detection Probability vs. SNR</em>
-</p>
-
-<p align="center">
-  <img src="results/Runtime_Comparison.png" width="700"><br>
-  <em>Runtime: conventional FFT vs. Sparse FFT vs. CoSPS</em>
-</p>
-
-<p align="center">
-  <img src="results/Spectrum_Heatmap.png" width="700"><br>
-  <em>Spectrum occupancy heatmap — occupied vs. idle bands</em>
-</p>
-
----
 
 ## 🚀 Future Improvements
 
