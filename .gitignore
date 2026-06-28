@@ -1,0 +1,13 @@
+#MATLAB
+*.asv
+*.autosave
+
+*.log
+
+*.tmp
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*.zip
